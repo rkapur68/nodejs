@@ -18,7 +18,7 @@ RUN useradd -m appuser
 
 # Add 'appuser' to the 'sudo' group
 #RUN adduser appuser sudo
-RUN adduser appuser
+
 
 # Ensure 'appuser' can run sudo commands without a password
 #RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
