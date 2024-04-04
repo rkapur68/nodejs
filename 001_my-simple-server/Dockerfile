@@ -27,7 +27,7 @@ RUN useradd -m appuser
 #RUN echo 'root:password' | chpasswd
 
 # Switch to 'appuser'
-USER appuser
+#USER appuser
 
 # Copy the current directory contents into the container
 COPY --chown=appuser . .
