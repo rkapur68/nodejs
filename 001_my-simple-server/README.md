@@ -1,34 +1,58 @@
-create directory called nodejs where all nodejs practice exercises will be created
+<ul>
+<li><p>create directory called nodejs where all nodejs practice exercises will be created</p></li>
+<li><p>make sure git is installed, and you are familiar with git</p></li>
+<li><p>In integerated terminal</p><li>
+<ui><p>do git init</p></li>
+<li><p>do git status</p></li>
+<li><p>if main branch is master, rename it</p></li>
+<li><p>git branch -m main</p></li>
+<li>
+</ui>
+<li><p>git remote add origin <Git_URL_OF_YOUR_REPOSITORY></p></li>
 
-make sure git is installed, and you are familiar with git
-
-in integerated terminal
-
-do git init.
-do git status
-if main branch is master, rename it
-
-    git branch -m main
-
-git remote add origin <Git_URL_OF_YOUR_REPOSITORY>
-
+</ul>
+<p>
 Create a new directory for your project in above nodejs directory (e.g., mkdir my-simple-server).
+</p>
+<p>
+Navigate to the directory in your terminal (cd my-simple-server).</p>
+<p>
+Initialize a package.json file: npm init -y (the -y flag accepts default values).</p>
+<p>
+Create a file named server.js in your project directory.</p>
+<p>
+add code of server.js</p>
+<p>
+in integerated terminal</p>
+<p>
+make sure code runs using</p>
+<p>
+npm start</p>
+<p>
+do git add .</p>
+<p>
+git commit -m "001_my-simple-server"</p>
+<p>
+git push -u origin main</p>
 
-Navigate to the directory in your terminal (cd my-simple-server).
+<p>Docker File<br>
+# Use the specified node version as the base image
+FROM node:20.11.1
 
-Initialize a package.json file: npm init -y (the -y flag accepts default values).
+# Set the working directory in the container
 
-Create a file named server.js in your project directory.
+WORKDIR /001_my-simple-server
 
-add code of server.js
+# Install net-tools for netstat command
 
-in integerated terminal
+RUN apt-get update && apt-get install -y net-tools
 
-make sure code runs using
-npm start
+# Copy the current directory contents into the container
 
-do git add .
+COPY . .
 
-git commit -m "001_my-simple-server"
+# Run the command when the container launches
 
-git push -u origin main
+CMD [ "npm","start" ]
+
+</p>
