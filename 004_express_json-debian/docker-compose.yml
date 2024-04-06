@@ -7,9 +7,7 @@ services:
     working_dir: /app 
     command: ["npm", "start"]
     environment:
-      - PATH=/usr/local/bin:$PATH
-    volumes: 
-       - ./:/app  
+      - PATH=/usr/local/bin:$PATH 
     ports:
       - "3004:80" 
     restart: unless-stopped 
