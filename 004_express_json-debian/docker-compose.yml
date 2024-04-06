@@ -1,0 +1,16 @@
+version: '3.7'  
+
+services:
+  004_express_json-debian:  # Modified service name
+    build: .  
+    image: rkind6511/004_express_json-debian:01 
+    working_dir: /app 
+    command: ["npm", "start"]
+    environment:
+      - PATH=/usr/local/bin:$PATH
+    volumes: 
+       - ./:/app  
+    ports:
+      - "3004:80" 
+    restart: unless-stopped 
+
