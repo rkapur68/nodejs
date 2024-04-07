@@ -3,3 +3,4 @@ node_modules/
 .dockerignore
 Dockerfile
 .DS_Store
+docker-compose.yml
