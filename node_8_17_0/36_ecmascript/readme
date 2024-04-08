@@ -1,0 +1,3 @@
+Node.js started experimentally supporting ECMAScript modules in version 8.5.0, which was released in September 2017. However, the support for ECMAScript modules was considered unstable and experimental until Node.js version 14, released in April 2020. Since Node.js version 15.3.0, released in November 2020, the support for ECMAScript modules is considered stable.
+
+Therefore, Node.js versions 9 and under do not support ECMAScript modules. Also, while Node.js versions 10 to 13 do have some support for ECMAScript modules, this support is considered experimental and may not be fully compatible or stable. 

@@ -1,0 +1,92 @@
+Yes, you can upgrade and save to a new project folder. Here's how you can do it:
+
+**Step 1: Create a new project directory**
+
+First, create a new directory for your upgraded project:
+
+```bash
+mkdir my-upgraded-babel-project
+```
+
+**Step 2: Copy your project files**
+
+Next, copy your project files from the old directory to the new directory. You can use the `cp` command to do this:
+
+```bash
+cp -r my-babel-project/* my-upgraded-babel-project/
+```
+
+This command copies all files and directories from `my-babel-project` to `my-upgraded-babel-project`.
+
+**Step 3: Navigate to the new project directory**
+
+Navigate to your new project directory:
+
+```bash
+cd my-upgraded-babel-project
+```
+
+**Step 4: Upgrade Node.js**
+
+If you're using Node Version Manager (NVM), you can install Node.js 8.17.0 with the following command:
+
+```bash
+nvm install 8.17.0
+```
+
+And then switch to it using the `nvm use` command:
+
+```bash
+nvm use 8.17.0
+```
+
+**Step 5: Upgrade Babel**
+
+Now that you're using Node.js 8.17.0, you can upgrade Babel in your project. You can use `babel-upgrade` to automatically upgrade your Babel version and update your configuration files. Here's the command to run `babel-upgrade`:
+
+```bash
+npx babel-upgrade --write --install
+```
+
+**Step 6: Run your code with Babel 7**
+
+Now you can run your code with the following command:
+
+```bash
+npm start
+```
+
+This command transpiles and runs your `index.js` file with Babel 7.
+
+
+
+
+
+
+The `babel-upgrade` tool automatically updates your Babel dependencies and configuration files¹². However, it does not modify the scripts in your `package.json` file¹².
+
+If you want to modify the `start` script in your `package.json` file after running `babel-upgrade`, you'll need to do it manually. Here's how you can do it:
+
+1. Open your `package.json` file in a text editor.
+
+2. Find the `scripts` section. It might look something like this:
+
+    ```json
+    "scripts": {
+      "start": "babel-node --presets es2015 index.js"
+    }
+    ```
+
+3. Modify the `start` script to use the new Babel preset. For example, if you're upgrading to Babel 7 and using the `@babel/preset-env` preset, your `start` script might look like this:
+
+    ```json
+    "scripts": {
+      "start": "babel-node --presets @babel/preset-env index.js"
+    }
+    ```
+
+4. Save your `package.json` file.
+
+Now, when you run `npm start`, it will use the new Babel preset.
+
+
