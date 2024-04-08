@@ -1,0 +1,12 @@
+services:
+  005_static_path_demo:
+    build: .
+    image: rkind6511/006_routes_express_demo-debian:01
+    working_dir: /app
+    ports:
+      - "3006:80"
+    environment:
+      - PATH=/usr/local/bin:$PATH
+    restart: unless-stopped
+    container_name: 006_routes_express_demo # Added for container naming
+    command: npm start -d # Added -d flag for detached mode
